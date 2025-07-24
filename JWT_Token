@@ -1,0 +1,10 @@
+JWT Token :-
+
+	JWT is a open source standard used to share information between client-server application
+	By Using JWT ,we will generate token/validate Tokens
+	NOTE:- By Default spring boot not providing any JWT libraries
+	
+	JWT token contains 3 sections
+		1. Header:- By using which algorithm we are generating token
+		2. Payload:- Information of clients
+		3. Signature:- sign in with secret key
