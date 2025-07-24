@@ -8,3 +8,14 @@ JWT Token :-
 		1. Header:- By using which algorithm we are generating token
 		2. Payload:- Information of clients
 		3. Signature:- sign in with secret key
+		
+		Header+payload+signature(security Key)
+	
+	Creating SpringBoot web application: without security
+	
+	
+-> One round of testing of all above API's
+-> Start enabling security layer to this application
+-> Access API's what is happening
+->Integrate JWT:
+	JWT token generation on login success
