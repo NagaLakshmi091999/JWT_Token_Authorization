@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface UserInformationRepository extends JpaRepository<UserInformation, String>{
 
-	UserInformation findByEmailnIdAndPassword(String emailId, String password);
+	UserInformation findByEmailIdAndPassword(String enmailId, String password);
 
 }

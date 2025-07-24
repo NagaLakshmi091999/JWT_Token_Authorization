@@ -15,10 +15,10 @@ public class UserServiceImpl implements UserService{
 	public String signUpUser(UserInformationDto userInformation) {
 		// entity
 
-		if (userRepo.findById(userInformation.getEnmailId()).isPresent()) {
+		if (userRepo.findById(userInformation.getEmailId()).isPresent()) {
 			return "Email Already Existed";
 		} else {
-			UserInformation userInfo = new UserInformation(userInformation.getEnmailId(), userInformation.getPassword(),
+			UserInformation userInfo = new UserInformation(userInformation.getEmailId(), userInformation.getPassword(),
 					userInformation.getUserName(), userInformation.getMobileNumber());
 			userRepo.save(userInfo);
 			return "User Created successfully";
@@ -29,7 +29,7 @@ public class UserServiceImpl implements UserService{
 	@Override
 	public String signin(UserLoginDto userLogin) {
 		// TODO Auto-generated method stub
-		UserInformation user = userRepo.findByEmailnIdAndPassword(userLogin.getEmailId(),userLogin.getPassword());
+		UserInformation user = userRepo.findByEmailIdAndPassword(userLogin.getEmailId(),userLogin.getPassword());
 		if(user!=null) {
 			return "User Login Success, Welcome "+ user.getUserName();
 		}else
@@ -57,7 +57,7 @@ public class UserServiceImpl implements UserService{
 			userRepo.deleteById(userId);
 			return "User SuccessFully Deleted";
 		}
-		return "UserId Not Existed";
+		return "User Not Found to Delete";
 			
 	}
 
